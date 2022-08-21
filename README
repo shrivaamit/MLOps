@@ -1,0 +1,7 @@
+#Clone repository
+git clone https://github.com/shrivaamit/MLOps
+cd MLOps
+#Install requirements.tx file using below
+pip install -r requirements.txt
+#Run the code
+python plot_digits_classification.py 
