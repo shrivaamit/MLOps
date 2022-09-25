@@ -27,14 +27,9 @@ n_samples = len(digits.images)
 input_size = 8
 data = new_data(digits.data, input_size)
 
-GAMMA = [10,0.1,0.001]
-C = [1,10,0.25,5]
-best_gam = 0
-best_c = 0
-best_mean_acc=0
-best_train=0
-best_val=0
-best_test=0
+GAMMA, C = [10,0.1,0.001], [1,10,0.25,5]
+best_gam, best_c, best_mean_acc, best_train, best_val, best_test = 0, 0, 0, 0, 0, 0
+
 t_l = [['Gamma','C','train acc','dev acc.','val acc']]
 
 
@@ -68,7 +63,8 @@ for G in GAMMA:
 			c_best_train=acc_train
 			c_best_test=acc_test
 			c_best_val=acc_val
-print(tabulate(t_l, headers='firstrow', tablefmt='fancy_grid'))
+
+print(tabulate(t_l, tablefmt='fancy_grid'))
 print('Best Hyperparameters'+str(c_best_gam)+' and '+str(c_best_c))
 print('train, val, and acc '+str(c_best_train)+'%, '+str(c_best_val)+'%, '+str(c_best_test)+'%')
 print(" ")
